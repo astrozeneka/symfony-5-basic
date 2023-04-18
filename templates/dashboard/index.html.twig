@@ -10,8 +10,81 @@
 
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    This will require to be logged inm
+        h1 {
+            color: #444444;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #BDBDBD;
+            margin: 20px auto;
+            padding: 20px;
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            border: 1px solid #CCCCCC;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 3px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3E8E41;
+        }
+    </style>
+    <form method="post" action="{{ path('app_specimen_insert') }}">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="temperature">Temperature:</label>
+        <input type="number" id="temperature" name="temperature" step="any" required>
+
+        <label for="collectorName">Collector Name:</label>
+        <input type="text" id="collectorName" name="collectorName" required>
+
+        <label for="fileUpload">File Upload:</label>
+        <input type="file" id="fileUpload" name="fileUpload">
+
+        <label for="sampleId">Sample ID:</label>
+        <input type="text" id="sampleId" name="sampleId" required>
+
+        <input type="submit" value="Submit">
+    </form>
 
     <a href="{{ path('app_logout') }}">Log out</a>
 </div>

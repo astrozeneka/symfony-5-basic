@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DashboardController!{% endblock %}
+
+{% block body %}
+<table>
+    <tbody>
+    {% for specimen in specimens %}
+        <tr>
+            <td>{{ specimen.id }}</td>
+            <td>{{ specimen.location }}</td>
+            <td>{{ specimen.temperature }}</td>
+            <td>{{ specimen.collectorName }}</td>
+            <td>{{ specimen.image }}</td>
+            <td>{{ specimen.sampleId }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
